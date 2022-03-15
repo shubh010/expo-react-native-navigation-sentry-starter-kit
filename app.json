@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "floret",
+    "name": "Design Expo",
     "slug": "floret",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -13,13 +13,35 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.niflux.tracker",
+      "buildNumber": "4.5",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Need Photo Library Permissions.",
+        "NSCameraUsageDescription": "Need Photo Library Permissions.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Need location permissions",
+        "UIBackgroundModes": ["location", "fetch", "remote-notification"]
+      }
     },
     "android": {
+      "permissions": [
+        "ACCESS_BACKGROUND_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "READ_INTERNAL_STORAGE",
+        "MEDIA_LIBRARY",
+        "USE_BIOMETRIC",
+        "USE_FINGERPRINT",
+        "RECEIVE_BOOT_COMPLETED",
+        "WAKE_LOCK"
+      ],
+      "package": "com.niflux.tracker",
+      "versionCode": 3,
+      "useNextNotificationsApi": true,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
@@ -27,6 +49,19 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": ["sentry-expo"]
+  },
+  "hooks": {
+    "postPublish": [
+      {
+        "file": "sentry-expo/upload-sourcemaps",
+        "config": {
+          "organization": "alds-kz",
+          "project": "floret",
+          "authToken": "f5397e5b30c143d39c916ea7e401b3e2d394468d59174f5f85b840324e5763e9"
+        }
+      }
+    ]
   }
 }
