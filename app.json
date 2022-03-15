@@ -57,9 +57,9 @@
       {
         "file": "sentry-expo/upload-sourcemaps",
         "config": {
-          "organization": "alds-kz",
-          "project": "floret",
-          "authToken": "f5397e5b30c143d39c916ea7e401b3e2d394468d59174f5f85b840324e5763e9"
+          "organization": "Your Organization Slug",
+          "project": "project Name",
+          "authToken": "auth key"
         }
       }
     ]
