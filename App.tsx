@@ -5,8 +5,9 @@ import { RecoilRoot } from "recoil";
 import MyApp from "./app/MyApp";
 import { lightColors } from "./app/theme/colors";
 
+//You can find your dsn from sentry danshboard
 Sentry.init({
-  dsn: "https://a6603eed3421425cbf2b93f4b751dc49@o1162563.ingest.sentry.io/6259238",
+  dsn: "Your DSN",
   enableInExpoDevelopment: false,
   debug: true,
 });
